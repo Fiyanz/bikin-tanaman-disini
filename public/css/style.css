@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem;
+    width: 100vw;
+    height: 100vh;
+    /* border: 2px solid #000; */
+    justify-items: center;
+}
+
+body > header {
+    border-radius: 12px;
+    box-shadow: 0px 0px 3px #000;
+    background-color: yellowgreen;
+    align-self: center;
+    height: auto;
+    width: 97%;
+    margin: 1.5rem 2rem 1.5rem 2rem;
+    z-index: 10;
+    position: fixed;
+}
+
+body > main {
+    /* border: 2px solid #000; */
+    justify-self: center;
+    width: 100%;
+    height: auto;
+}
+
+body > footer {
+    /* border: 2px solid #000; */
+    width: 100%;
+    height: auto;
+}
+
+/* NAVBAR */
+body > header > nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+}
+
+body > header > nav > h1 {
+    /* border: 2px solid #fafa; */
+    padding-left: 2rem;
+    color: white;
+}
+
+body > header > nav > h1 span {
+    color: grey;
+}
+
+body > header > nav > ul {
+    /* border: 2px solid #fafa; */
+    width: 45%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+body > header > nav > ul a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 450;
+}
+
+body > header > nav > ul a:hover {
+    color: white;
+    font-weight: 600;
+}
+
+/* HERO SECTION */
+body > main > .hero-section {
+    background-image: url(../img/Landscape\ Background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    /* border: 4px solid #fafa; */
+    height: 720px;
+}
+
+body > main > .hero-section > div {
+    /* border: 2px solid #fff; */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 20px;
+    background-color: rgba(0,0,0, 65%);
+}
+
+body > main > .hero-section > div h1 {
+    color: #fff;
+}
+
+body > main > .hero-section > div p {
+    color: #fff;
+    text-align: center;
+}
+
+/* HIGHLIGHT SECTION */
+body > main > .highlight-section {
+    background-color: rgb(215, 215, 215);
+    height: 240px;
+}
+
+/* ENTERTAINMENT SECTION */
+body > main > .entertainment-section {
+    background-color: rgba(240, 240, 240, 0.667);
+    height: 720px;
+}
+
+/* ABOUT US SECTION */
+body > main > .about-us-section {
+    background-color: #818181;
+    height: 720px;
+}
+
+/* OUR SERVICES SECTION */
+body > main > .our-services-section {
+    background-color: #ffe6e6;
+    height: 720px;
+}
+
+/* PROJECTS SECTION */
+body > main > .projects-section {
+    background-color: aquamarine;
+    height: 720px;
+}
+
+/* TESTIMONIAL SECTION */
+body > main > .testimonial-section {
+    background-color: rgb(175, 88, 88);
+    height: 720px;
+}
+
+/* GALLERY SECTION */
+body > main > .gallery-section {
+    background-color: aliceblue;
+    height: 720px;
+}
+
+/* CATALOG SECTION */
+body > main > .catalog-section {
+    background-color: bisque;
+    height: 720px;
+}
+
+/* CONTACT US SECTION */
+body > main > .contact-us-section {
+    background-color: cadetblue;
+    height: 720px;
+}
+
+/* FOOTER */
+body > footer {
+    height: 360px;
+    background-color: rgb(30, 27, 27);
+}
