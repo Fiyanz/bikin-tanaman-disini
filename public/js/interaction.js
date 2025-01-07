@@ -60,28 +60,133 @@ const galleryData = [
         description: "Tanaman hias dengan daun merah menyala yang memikat."
     },
     {
+        src: "../img/Alocasia silver dragon.png",
+        title: "Alocasia Silver Dragon",
+        description: "Tanaman hias eksotis dengan daun seperti sisik naga berwarna perak."
+    },
+    {
         src: "../img/Anggrek Cymbidium.png",
         title: "Anggrek Cymbidium",
-        description: "Anggrek cantik dengan bunga besar, cocok untuk dekorasi ruangan."
+        description: "Bunga anggrek elegan dengan bentuk dan warna yang memukau."
     },
+    {
+        src: "../img/Anthurium faustomirandae.png",
+        title: "Anthurium Faustomirandae",
+        description: "Tanaman unik dengan daun besar dan tekstur yang tebal."
+    },
+    {
+        src: "../img/Anthurium luxurians.png",
+        title: "Anthurium Luxurians",
+        description: "Tanaman berdaun hijau gelap yang mengkilap, cocok untuk dekorasi."
+    },
+    {
+        src: "../img/Anting putri (2).png",
+        title: "Anting Putri",
+        description: "Tanaman dengan bunga kecil berwarna putih yang cantik."
+    },
+    {
+        src: "../img/Anting putri.png",
+        title: "Anting Putri",
+        description: "Tanaman dengan bunga kecil berwarna putih yang cantik."
+    },
+    {
+        src: "../img/Bambu kuning.png",
+        title: "Bambu Kuning",
+        description: "Tanaman bambu dengan batang kuning yang cerah, sering digunakan untuk pagar."
+    },
+    {
+        src: "../img/Batu pancuran.png",
+        title: "Batu Pancuran",
+        description: "Ornamen taman berbentuk batu dengan air yang mengalir indah."
+    },
+    {
+        src: "../img/Bougenville pink.png",
+        title: "Bougenville Pink",
+        description: "Tanaman berbunga lebat dengan warna pink mencolok."
+    },
+    {
+        src: "../img/Bougenville red.png",
+        title: "Bougenville Red",
+        description: "Tanaman berbunga lebat dengan warna merah menyala."
+    },
+    {
+        src: "../img/Calathea.png",
+        title: "Calathea",
+        description: "Tanaman dengan corak daun yang indah dan menarik perhatian."
+    },
+    {
+        src: "../img/Kamboja fosil.png",
+        title: "Kamboja Fosil",
+        description: "Tanaman unik dengan batang yang berbentuk seperti fosil."
+    },
+    {
+        src: "../img/Kamboja jepang.png",
+        title: "Kamboja Jepang",
+        description: "Tanaman dengan bunga cantik dan bentuk batang yang khas."
+    },
+    {
+        src: "../img/Krotok merah.png",
+        title: "Krotok Merah",
+        description: "Tanaman dengan daun berwarna merah menyala dan tekstur unik."
+    },
+    {
+        src: "../img/Paku ekor kuda.png",
+        title: "Paku Ekor Kuda",
+        description: "Tanaman paku dengan bentuk unik seperti ekor kuda."
+    },
+    {
+        src: "../img/Pandan bidur.png",
+        title: "Pandan Bidur",
+        description: "Tanaman hias dengan aroma khas dan daun panjang yang menarik."
+    },
+    {
+        src: "../img/Philodendron selloum.png",
+        title: "Philodendron Selloum",
+        description: "Tanaman dengan daun hijau besar yang lebat, cocok untuk dekorasi indoor."
+    },
+    {
+        src: "../img/Pohon jeruk.png",
+        title: "Pohon Jeruk",
+        description: "Pohon buah dengan daun hijau lebat dan buah jeruk segar."
+    }
 ];
 
-let currentIndex = 0;
+function renderGallery() {
+    const galleryContainer = document.querySelector('.gallery-section > div');
+    galleryContainer.innerHTML = '';
+
+    galleryData.forEach((item, index) => {
+        const article = document.createElement('article');
+        article.innerHTML = `
+            <figure>
+                <img src="${item.src}" onclick="openPreview('${item.title}', '${item.description}', ${index})">
+            </figure>
+        `;
+        galleryContainer.appendChild(article);
+    });
+}
 
 function openPreview(title, description, index = 0) {
     const preview = document.getElementById("previewGallery");
+    currentIndex = index;
+    updatePreviewContent();
+    preview.style.display = "flex";
+}
+
+function updatePreviewContent() {
     const previewImage = document.getElementById("previewImage");
     const previewTitle = document.getElementById("previewTitle");
     const previewDescription = document.getElementById("previewDescription");
 
-    currentIndex = index;
-
     previewImage.src = galleryData[currentIndex].src;
     previewTitle.textContent = galleryData[currentIndex].title;
     previewDescription.textContent = galleryData[currentIndex].description;
-
-    preview.style.display = "flex";
 }
+
+// Initialize gallery when page loads
+document.addEventListener('DOMContentLoaded', renderGallery);
+
+let currentIndex = 0;
 
 function closePreview() {
     const preview = document.getElementById("previewGallery");
